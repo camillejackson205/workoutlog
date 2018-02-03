@@ -3,7 +3,9 @@ var app = express();
 var bodyParser = require('body-parser');
 var sequelize = require('./db.js');
 var User = sequelize.import('./models/user');
-app.use('/api/user', require('./routes'));
+app.use(bodyParser.json());
+app.use('/api/user', require('./routes/user'));
+app.use('/api/login', require('./routes/session'));
 
 User.sync();
 app.use(require('./middleware/headers'));
@@ -22,7 +24,6 @@ app.listen(3000, function(){
 
 //  User.sync({force:true})
 
-app.use(bodyParser.json());
 
 
 
