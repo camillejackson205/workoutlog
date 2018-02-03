@@ -4,7 +4,7 @@ var jwt= require('jsonwebtoken');
 var sequelize = require('../db.js');
 var User = sequelize.import('../models/user.js');
 
-router.post('/', function(req, res){
+  router.post('/', function(req, res){
     User.findOne( {where: { username: req.body.user.username} } ).then(
         function(user) {
             if(user) {
