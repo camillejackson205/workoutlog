@@ -1,4 +1,4 @@
-var router = require('exress').Router();
+var router = require('express').Router();
 var sequelize = require('../db.js');
 var User = sequelize.import('../models/user.js');
 var definition = sequelize.import('../models/definition.js');
