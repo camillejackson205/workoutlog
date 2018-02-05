@@ -10,7 +10,7 @@ app.use('/api/login', require('./routes/session'));
 
 User.sync();
 app.use(require('./middleware/headers'));
-app.use(require('./middleware/validate-session'));
+app.use(require('./middleware/validate-sessions'));
 app.use('/api/test', function(req, res){
 	res.send("Hello World");
 });
