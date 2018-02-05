@@ -30,7 +30,12 @@ $(function() {
        login: function() {
             var username = $("#li_username").val();
             var password = $("#li_password").val();
-            var user = {user:  {username: username, password: password }};
+            var user = {
+                user: {
+                    username: username,
+                    password: password
+                }
+            };
             var login = $.ajax({
                 type: "POST", 
                 url: WorkoutLog.API_BASE + "login", 

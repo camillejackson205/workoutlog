@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('awesomeworkoutlog', 'postgres', 'skip983825', {
+var sequelize = new Sequelize('workoutlog', 'postgres', 'skip983825', {
 	host: 'localhost',
 	dialect: 'postgres',
 	port: 5433
@@ -15,5 +15,7 @@ sequelize.authenticate().then(
 		console.log(err);
 	}
 );
+
 var User = sequelize.import('./models/user');
+
 module.exports = sequelize;
