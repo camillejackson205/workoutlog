@@ -7,7 +7,7 @@ var sequelize = require('./db.js');
 
 var User = sequelize.import('./models/user');
 
-User.sync();
+sequelize.sync();
 
 app.use(bodyParser.json());
 
@@ -16,6 +16,7 @@ app.use(require('./middleware/validate-sessions'));
 
 app.use('/api/user', require('./routes/user'));
 app.use('/api/login', require('./routes/session'));
+app.use('/api/definition', require('./routes/definition'));
 
 app.use('/api/test', function(req, res){
 	res.send("Hello World");
