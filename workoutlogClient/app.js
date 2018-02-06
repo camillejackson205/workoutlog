@@ -39,6 +39,10 @@ $(function(){
              WorkoutLog.log.setDefinitions();
           }
     
+          if (target === "#update-log") {
+            WorkoutLog.log.setDefinitions();
+          }
+    
           if (target === "#history") {
              WorkoutLog.log.setHistory();
           }
@@ -56,7 +60,7 @@ $(function(){
           }
        });
     
-       // bind tab change events
+      //  bind tab change events
       // bootstrap tab --> binding to a bootstrap event
       $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
          var target = $(e.target).attr("href"); // activated tab
@@ -90,6 +94,9 @@ $(function(){
        // expose this to the other workoutlog modules
        window.WorkoutLog = WorkoutLog;
     });
+    
+    
+    
     
     
     
