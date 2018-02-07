@@ -7,8 +7,8 @@ var sequelize = require('./db.js');
 
 var User = sequelize.import('./models/user');
 
+//  sequelize.sync({force:true});
 sequelize.sync();
-
 app.use(bodyParser.json());
 
 app.use(require('./middleware/headers'));
@@ -18,6 +18,7 @@ app.use('/api/user', require('./routes/user'));
 app.use('/api/login', require('./routes/session'));
 app.use('/api/definition', require('./routes/definition'));
 app.use('/api/log', require('./routes/log'));
+app.use('/api/sleep', require('./routes/sleep'));
 
 
 

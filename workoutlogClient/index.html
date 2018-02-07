@@ -29,6 +29,7 @@
     <li><a href="#define" class="disabled" data-toggle="tab">Define</a></li>
     <li><a href="#log" class="disabled" data-toggle="tab">Log</a></li>
     <li><a href="#history" class="disabled" data-toggle="tab">View History</a></li>
+    <li><a href="#sleep" class="disabled" data-toggle="tab">Sleep Analysis</a></li>
     <a href="#update-log" data-toggle="tab" class="disabled" type="hidden"></a>
 
   </ul>
@@ -59,9 +60,7 @@
           </select>
           <button id="def-save" class="btn btn-primary">Save</button>
       </div>
-
-    
-      <div class="tab-pane fade" id="log">
+    <div class="tab-pane fade" id="log">
         <h2>log!</h2>
         <label>Result</label>
         <input type="text" class="form-control" id="log-result" />
@@ -95,6 +94,18 @@
         </ul>
       </div>
     </div>
+
+
+    <!-- SLEEP ANALYSIS -->
+    <div class="tab-pane fade" id="sleep">
+      <h2>Sleep Analysis</h2>
+        <label for="def-description">Description</label>
+        <input type="number">
+        <label for="def-logtype">Log work by</label>
+        <button id="sleepbtn" class="btn btn-primary">Save</button>
+    </div>
+
+    
 
  <div class="modal fade" id="login-modal" role="dialog">
    <div class="modal-dialog">

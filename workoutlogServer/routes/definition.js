@@ -1,28 +1,20 @@
 var router = require('express').Router();
 var sequelize = require('../db.js');
-var User = sequelize.import('../models/user.js');
+var User = sequelize.import('../models/definition.js');
 var definition = sequelize.import('../models/definition.js');
 
-router.post('/', function(re, res) {
-    //variables
+router.post('/', function(req, res) {
 var description = req.body.definition.desc;
 var logType = req.body.definition.type;
 var owner = req.user.id;
-
-//methods
-definition  
-.create({
-    description: description,
-    logType: logType,
-    owner: owner
-})
- .then(
-    //createSuccess function
-    
-    
-    //createError function
+    definition  
+    .create({
+        description: description,
+        logType: logType,
+        owner: owner
+    })
+    .then(
     function createSuccess(definition) {
-            //send a response as json
             res.json({
                 definition: definition
             });
@@ -34,25 +26,22 @@ definition
     });
 
         router.get('/', function(req, res){
-            //user variable
             var userid= req.user.id;
             definition
-            //findAll by owner method
             .findAll({
                 where: { owner: userid }
             })
 
             .then(
-                //success
                 function findAllSuccess(data) {
-                    //console.log(data);
                     res.json(data);
                 },
-                //failure
                 function findAllError(err) {
                     res.send(500, err.message);
                 }
             );
         });
+
+        
 
         module.exports = router;
