@@ -19,8 +19,7 @@
     <![endif]-->
 </head>
 
-<body>
-
+<body background = "https://timeincsecure-a.akamaihd.net/rtmp_uds/293884104/201607/2807/293884104_5026627194001_5026612549001-vs.jpg?pubId=293884104&videoId=5026612549001">
 
   <ul class="nav nav-tabs">
     <li><a href="#home" id="loginout" class="disabled" data-toggle="tab">Login</a>
@@ -46,6 +45,13 @@
         <div id="forLogout" style="display:none;">
           <button class="btn btn-primary">Logout</button>
         </div>
+      </div>
+      <!-- SLEEP ANALYSIS -->
+      <div class="tab-pane fade" id="sleep">
+        <h2>Sleep Analysis</h2>
+          <label for="def-description">How many hours have you slept ?</label>
+          <input type="number" id="sleep-result" placeholder="hrs">
+          <button id="sleepbtn" class="btn btn-primary">Save</button>
       </div>
       <!-- DEFINE -->
       <div class="tab-pane fade" id="define">
@@ -96,14 +102,6 @@
     </div>
 
 
-    <!-- SLEEP ANALYSIS -->
-    <div class="tab-pane fade" id="sleep">
-      <h2>Sleep Analysis</h2>
-        <label for="def-description">Description</label>
-        <input type="number">
-        <label for="def-logtype">Log work by</label>
-        <button id="sleepbtn" class="btn btn-primary">Save</button>
-    </div>
 
     
 
@@ -158,11 +156,9 @@
     <script src="./user/auth.js"></script> 
     <script src="./workouts/define.js"></script>
     <script src="./workouts/log.js"></script>
+    <script src="./workouts/sleep.js"></script>
 <!--
     <script src="./dist/bundle.js"></script> -->
 </body>
 
 </html>
-
-
-  
